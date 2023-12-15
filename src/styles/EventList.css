@@ -1,0 +1,123 @@
+.opaque-navbar {
+    background-color: #000000; /* Imposta il colore di sfondo nero con opacità 0.8 */
+  }
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+  
+.navbar-logo {
+    max-height: 100px; /* Imposta l'altezza massima del logo, regola secondo le tue esigenze */
+    margin: 0 auto; /* Centra l'immagine all'interno della navbar-brand */
+    display: block; /* Impedisce il riempimento del margine ai lati */
+}
+  
+header{
+    height: 97vh;
+    margin-bottom: 10rem;
+    width: 100%;
+    background-image: url("/img/disco.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+section{
+    width: 100%;
+}
+
+body{
+    background-color: #1a191a;
+}
+
+.custom-shape-divider-bottom-1702654749 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1702654749 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 75px;
+    margin-bottom: 20px;
+}
+
+.custom-shape-divider-bottom-1702654749 .shape-fill {
+    fill: #1A191A;
+}
+
+.event-list-container {
+    display: flex;
+    flex-wrap: wrap; /* Consente alle card di andare a capo su schermi più piccoli */
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .event-card {
+    flex: 0 0 calc(50% - 20px); /* Imposta la larghezza al 50% con un margine di 20px tra le card */
+    margin: 10px;
+    box-sizing: border-box; /* Assicura che il margine non influisca sulla larghezza effettiva della card */
+    background: #FFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .event-image {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .event-info {
+    padding: 15px;
+  }
+  
+  .event-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #333;
+  }
+  
+  .event-description,
+  .event-date {
+    font-size: 1em;
+    color: #740303;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .event-card {
+      flex: 0 0 calc(100% - 20px); /* Su schermi più piccoli, occupa l'intera larghezza con il margine */
+    }
+  }
+  
+
+@media (max-width: 480px) {
+    .event-card {
+        margin: 10px auto; /* Even less margin on very small screens */
+    }
+
+    .event-info {
+        padding: 10px;
+    }
+
+    .event-title {
+        font-size: 1.2em;
+    }
+
+    .event-description,
+    .event-date {
+        font-size: 0.9em;
+    }
+}
