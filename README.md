@@ -4,10 +4,11 @@
 ## Table of Contents
 1. [Exercise Requirement](#exercise-requirement)
 2. [Technologies](#technologies)
-3. [Author](#author)
-4. [License](#license)
-5. [Standard Use](#standard-use)
-6. [Approach To Solution](#approach-to-solution)
+3. [How to run](#how-to-run)
+4. [Author](#author)
+5. [License](#license)
+6. [Standard Use](#standard-use)
+7. [Approach To Solution](#approach-to-solution)
 
 ## Exercise Requirement
 ***
@@ -15,7 +16,12 @@ Il Disco Project è un'applicazione React dedicata a presentare eventi in una di
 
 ## Technologies
 ***
-React, JSX, CSS
+React, JSX, CSS, Vite
+
+## How to run
+***
+Per avviare il progetto in locale, essendo in Vite, l'avvio sarà differente rispetto al classico "npm run build", in quanto il progetto Vite sarà annidato all'interno del progetto React.
+Se non si è all'interno della cartella disco-project, navigare fino alla directory e digitare il comando "npm run dev".
 
 ## Author
 ***

@@ -61,7 +61,7 @@ export interface Event {
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top opaque-navbar" data-bs-theme="dark" id="pippo">
           <div className="container-fluid">
             <a className="navbar-brand" href="#top">
-              <img src="../img/logo.png" alt="Logo" className="navbar-logo" />
+              <img src="https://i.ibb.co/SffnyyC/logo.png" alt="Logo" className="navbar-logo" />
             </a>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
           </div>

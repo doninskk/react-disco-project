@@ -75,10 +75,9 @@ const EventDetail = () => {
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top opaque-navbar" data-bs-theme="dark" id="pippo">
               <div className="container-fluid">
                 <Link to="/" className="navbar-brand">
-                  <img src="../img/logo.png" alt="Logo" className="navbar-logo" />
+                  <img src="https://i.ibb.co/SffnyyC/logo.png" alt="Logo" className="navbar-logo" />
                 </Link>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  {/* Altri elementi della navbar, se presenti */}
               </div>
             </div>
           </nav>

@@ -3,20 +3,20 @@
     margin: 0 auto; /* Center the container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
     padding: 15px;
-    background-color: rgba(216, 22, 22, 0.778); /* Container background */
+    background-color: rgba(201, 201, 201, 0.899); /* Container background */
     border-radius: 10px; /* Rounded corners */
     margin-top: 50px; /* Space from top */
     position: relative; /* For the raised effect */
     z-index: 1; /* Raise above the background */
-    color: #ffffff; /* Dark text color for readability */
+    color: #000000; /* Dark text color for readability */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: large;
   }
   
 .event-detail-container b{
-  color: #000000;
+  color: #a70c0c;
 }
 
-  
-  
   .event-detail-image {
     width: 100%; /* Full width inside the container */
     height: auto; /* Maintain aspect ratio */
@@ -68,7 +68,7 @@
   .event-booking-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #007bff; /* Primary button color */
+    background-color: #000000; /* Primary button color */
     color: white;
     border: none;
     border-radius: 5px;
@@ -77,7 +77,7 @@
   }
   
   .event-booking-button:hover {
-    background-color: #0056b3; /* Darker on hover */
+    background-color: #282828c8; /* Darker on hover */
   }
   
   /* Additional styles for new elements */
