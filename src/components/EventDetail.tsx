@@ -5,14 +5,17 @@ import { Event } from './EventList';
 
 const EventDetail = () => {
 
-    const {eventId} = useParams(); //assegniamo la variabile che abbiamo passato tramite la navigazione da EventList 
+    const {eventId} = useParams(); // Estrae l'ID dell'evento dalla URL utilizzando l'hook useParams di react-router-dom
+    
     //setters
-    const location = useLocation();
-    const [eventDetail, setEventDetail] = useState<Event | null>(location.state?.event || null);
-    const [slots, setSlots] = useState<string[]>([]);
-    const [selectedSlot, setSelectedSlot] = useState('');
+    const location = useLocation(); // Ottiene la location corrente per accedere agli state passati dalla pagina
+    const [eventDetail, setEventDetail] = useState<Event | null>(location.state?.event || null); // Stato per memorizzare i dettagli dell'evento
+    const [slots, setSlots] = useState<string[]>([]); // Stato per memorizzare gli slot di tempo generati
+    const [selectedSlot, setSelectedSlot] = useState(''); // Stato per memorizzare lo slot di tempo selezionato 
 
+    // si attiva al caricamento del componente o quando cambia l'ID dell'evento
     useEffect(() => {
+        // funzione che recupera i dettagli dell'evento dalla API
         async function fetchEventDetails() {
           try {
             const response = await fetch(`https://its-events.davide-mantovani.workers.dev/events/${eventId}` );
@@ -24,18 +27,21 @@ const EventDetail = () => {
             console.error('Error fetching events:', error);
           }
         }
-    
-        fetchEventDetails(); 
+        // chiamata della funzione per recuperare i dettagli dell'evento
+        fetchEventDetails();
+        // se sono disponibili i dettagli dell'evento, genera gli slot di tempo 
         if(eventDetail){
             setSlots(generateTimeSlots(eventDetail.date));//settiamo gli slot dopo averli generati tramite la funzione che richiede la data dell'evento
         }
       }, [eventDetail, eventId]); //il componente EventDetail dipende dalla variabile eventId 
 
-      const formatDate = (dateString: string | number | Date) => { //format della data in ita
+      // Funzione per formattare una data nel formato italiano
+      const formatDate = (dateString: string | number | Date) => { 
         const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
         return new Date(dateString).toLocaleDateString('it-IT', options);
       };
 
+      // Funzione che in base all'orario di inizio dell'evento, genera gli slot di tempo
       const generateTimeSlots = (startTime: string | number | Date) => { //creazione degli slot
         const slots = [];
         const eventStartTime = new Date(startTime); //utilizziamo la data dell'evento come punto di partenza 
@@ -48,6 +54,7 @@ const EventDetail = () => {
         return slots;
       };
 
+      // Funzione per gestire la prenotazione
       const handleBooking = () => {
         if (!selectedSlot) { //se non ci sono slot selezionati -> alert
           alert('Please select a time slot.');
@@ -57,6 +64,7 @@ const EventDetail = () => {
         // Se voglio usare firebase parto da qua, poi si vedrà
       };
 
+    // Funzione per gestire la selezione di uno slot di tempo
     const handleSlotSelection = (slot: React.SetStateAction<string>) => {
       setSelectedSlot(slot);
     };
@@ -111,7 +119,7 @@ const EventDetail = () => {
           </>
         );
       } else {
-        // Render a loading state or some placeholder content
+        // Renderizza il loading state
         return <div>Loading event details...</div>;
       }
     };

@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+--Disco Project--
+***
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+1. [Exercise Requirement](#exercise-requirement)
+2. [Technologies](#technologies)
+3. [Author](#author)
+4. [License](#license)
+5. [Standard Use](#standard-use)
+6. [Approach To Solution](#approach-to-solution)
 
-Currently, two official plugins are available:
+## Exercise Requirement
+***
+Il Disco Project è un'applicazione React dedicata a presentare eventi in una discoteca. L'obiettivo del progetto è fornire una piattaforma che mostri una lista di eventi, ciascuno con una pagina dettagliata che fornisce ulteriori informazioni sull'evento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+***
+React, JSX, CSS
 
-## Expanding the ESLint configuration
+## Author
+***
+Author: Claudia Grassitelli  
+Contact Information: claudia.grassitelli@edu.itspiemonte.it
+Role: Frontend Developer
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## License
+***
+CC By Attribution  
+You are free to:  
+Share — copy and redistribute the material in any medium or format  
+Adapt — remix, transform, and build upon the material for any purpose, even commercially.  
+The licensor cannot revoke these freedoms as long as you follow the license terms.
 
-- Configure the top-level `parserOptions` property like this:
+## Standard Used
+***
+Variables: camelCase  
+Files and Folder: kebab-case
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Approach To Solution
+***
+Il "Disco Project" è un'applicazione React dedicata a fornire informazioni sugli eventi di una discoteca. L'applicazione ha principalmente due pagine:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Homepage (EventList): Mostra una lista di eventi, ciascuno rappresentato da una "card" con informazioni di base come il nome dell'evento, la data, e una breve descrizione. Cliccare su un evento porta alla pagina di dettaglio corrispondente.
+
+Pagina di Dettaglio (EventDetail): Fornisce informazioni dettagliate su un singolo evento, inclusi dettagli come l'immagine di copertina, la data e l'ora, la descrizione completa, il dress code, il prezzo, le bevande incluse, i tag associati, e se è incluso un aperitivo. Gli utenti possono anche selezionare un orario disponibile per prenotare l'evento.

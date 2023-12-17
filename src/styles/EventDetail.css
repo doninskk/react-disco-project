@@ -15,11 +15,7 @@
   color: #000000;
 }
 
-  @media (max-width: 768px) {
-    .event-detail-container {
-      width: 90%; /* More width on smaller screens */
-    }
-  }
+  
   
   .event-detail-image {
     width: 100%; /* Full width inside the container */
@@ -99,4 +95,10 @@
   
   .event-additional-info strong {
     font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .event-detail-container {
+      width: 90%; /* More width on smaller screens */
+    }
   }

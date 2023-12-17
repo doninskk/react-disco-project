@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "../styles/EventList.css";
-import { useNavigate } from 'react-router-dom'; // import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 
-
-export interface Event { //struttura che definisce l'oggetto Evento 
+//struttura che definisce l'oggetto Evento 
+export interface Event { 
     id: number;
     name: string;
     coverImage: string;
@@ -25,27 +25,33 @@ export interface Event { //struttura che definisce l'oggetto Evento
   }
 
   const App: React.FC = () => {
+    // Stato per memorizzare la lista degli eventi
     const [events, setEvents] = useState<Event[]>([]);
+    // Hook di navigazione per spostarsi tra le pagine
     const navigate = useNavigate();
   
+    // si attiva al caricamento del componente per recuperare gli eventi
     useEffect(() => {
       const fetchEvents = async () => {
         try {
+          // Chiamata API per recuperare la lista degli eventi
           const response = await fetch(`https://its-events.davide-mantovani.workers.dev/events`);
           const data = await response.json(); // converte http in json 
           /*data in questo momento è un array in formato json, lo passo a setEvents 
           che tramite useState convertirà l'array in json in un array di Event*/
+          // Aggiorna lo stato con la lista degli eventi
           setEvents(data);
         } catch (error) {
           console.error('Error fetching events:', error);
         }
       };
-  
+      
+      // Chiamata della funzione per recuperare gli eventi
       fetchEvents(); 
-    }, []); //i parametri che 
+    }, []); // Il secondo parametro [] indica che l'effetto viene eseguito solo al montaggio del componente
 
     const handleEventClick = (event: Event) => {
-        // Navigate to the EventDetail page with the event's id
+         // Naviga alla pagina di dettaglio dell'evento con l'ID dell'evento come parametro
         navigate(`/event/${event.id}`, { state: { event } });
       };
 
